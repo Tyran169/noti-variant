@@ -3,7 +3,7 @@ const themes = ["amethyst-haze", "default", "shadcn-rose"] as const;
 export type Theme = (typeof themes)[number];
 
 export const THEME_LIST = [...themes].sort((a, b) =>
-  a.localeCompare(b),
+  a.localeCompare(b)
 ) as Theme[];
 
 export const THEME_LIST_OBJ = themes.reduce(
@@ -11,7 +11,7 @@ export const THEME_LIST_OBJ = themes.reduce(
     acc[theme] = theme;
     return acc;
   },
-  {} as Record<Theme, Theme>,
+  {} as Record<Theme, Theme>
 );
 
 const THEME_STORAGE_KEY = "app-theme";
