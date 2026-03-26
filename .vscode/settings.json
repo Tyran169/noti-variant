@@ -1,0 +1,42 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "biomejs.biome",
+  "[css]": {
+    "editor.defaultFormatter": null
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": null
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.rulers": [80],
+  "editor.minimap.enabled": true,
+  "editor.renderWhitespace": "all",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+
+  "emmet.showExpandedAbbreviation": "always",
+
+  "tailwindCSS.classFunctions": ["cva", "cx", "tw", "clsx", "twMerge"],
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    ".*Style[s]*",
+    ".*Style[s]: .*",
+    ".*Class[es]*",
+    ".*Class[es]: .*"
+  ],
+  "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
+
+  "search.exclude": {
+    "node_modules": true,
+    ".next": true,
+    "dist": true
+  },
+
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
+}

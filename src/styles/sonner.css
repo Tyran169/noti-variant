@@ -1,0 +1,181 @@
+/*
+ * A small set of CSS overrides to refine Sonner's default toast styles.
+ * Designed to work with Sonner's default markup and class names.
+ *
+ * Features:
+ * - Theme-aware (light / dark)
+ * - Optional richColors support
+ * - Improved button styling
+ * - Minimal overrides
+ *
+ * Note: This file assumes that Sonner's default styles are included in the project.
+ * Note: The 'invert' options will be disabled because these css variables follow the root theme variables therefore they cannot be inverted.
+ */
+
+/* ====================================== */
+/*      Global Variable Declarations      */
+/* ====================================== */
+
+.rst-toaster {
+  --rst-normal-bg: var(--color-popover);
+  --rst-normal-border: var(--color-border);
+  --rst-normal-text: var(--color-popover-foreground);
+
+  --rst-success-bg: var(--color-success-popover);
+  --rst-success-border: var(--color-success-border);
+  --rst-success-text: var(--color-success-popover-foreground);
+
+  --rst-info-bg: var(--color-info-popover);
+  --rst-info-border: var(--color-info-border);
+  --rst-info-text: var(--color-info-popover-foreground);
+
+  --rst-warning-bg: var(--color-warning-popover);
+  --rst-warning-border: var(--color-warning-border);
+  --rst-warning-text: var(--color-warning-popover-foreground);
+
+  --rst-error-bg: color-mix(in oklab, var(--destructive) 20%, white);
+  --rst-error-border: color-mix(in oklab, var(--destructive) 35%, white);
+  --rst-error-text: color-mix(in oklab, var(--destructive) 70%, black);
+}
+
+.rst-toaster[data-sonner-theme="dark"] {
+  --rst-error-bg: color-mix(in oklab, var(--destructive) 50%, black);
+  --rst-error-border: color-mix(in oklab, var(--destructive) 70%, black);
+  --rst-error-text: color-mix(in oklab, var(--destructive) 25%, white);
+}
+
+.rst-toaster .rst-toast {
+  --rst-toast-text: var(--rst-normal-text);
+  --rst-toast-bg: var(--rst-normal-bg);
+  --rst-toast-border: var(--rst-normal-border);
+}
+
+.rst-toaster .rst-toast[data-rich-colors="true"].rst-success {
+  --rst-toast-text: var(--rst-success-text);
+  --rst-toast-bg: var(--rst-success-bg);
+  --rst-toast-border: var(--rst-success-border);
+}
+
+.rst-toaster .rst-toast[data-rich-colors="true"].rst-info {
+  --rst-toast-text: var(--rst-info-text);
+  --rst-toast-bg: var(--rst-info-bg);
+  --rst-toast-border: var(--rst-info-border);
+}
+
+.rst-toaster .rst-toast[data-rich-colors="true"].rst-warning {
+  --rst-toast-text: var(--rst-warning-text);
+  --rst-toast-bg: var(--rst-warning-bg);
+  --rst-toast-border: var(--rst-warning-border);
+}
+
+.rst-toaster .rst-toast[data-rich-colors="true"].rst-error {
+  --rst-toast-text: var(--rst-error-text);
+  --rst-toast-bg: var(--rst-error-bg);
+  --rst-toast-border: var(--rst-error-border);
+}
+
+/* ============================== */
+/*      Restyle Sonner Toast      */
+/* ============================== */
+
+.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"] {
+  background: var(--rst-toast-bg);
+  border: 1px solid var(--rst-toast-border);
+  color: var(--rst-toast-text);
+}
+
+/* =================================== */
+/*      Restyle Sonner Toast Icon      */
+/* =================================== */
+
+.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"] .rst-icon {
+  color: var(--rst-normal-text);
+}
+
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"].rst-success
+  .rst-icon {
+  color: var(--rst-success-text);
+}
+
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"].rst-info
+  .rst-icon {
+  color: var(--rst-info-text);
+}
+
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"].rst-warning
+  .rst-icon {
+  color: var(--rst-warning-text);
+}
+
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"].rst-error
+  .rst-icon {
+  color: var(--rst-error-text);
+}
+
+/* ====================================== */
+/*      Restyle Sonner Toast Content      */
+/* ====================================== */
+
+.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"] .rst-title {
+  color: inherit;
+}
+
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"]
+  .rst-description {
+  color: inherit;
+}
+
+/* ============================================ */
+/*      Restyle Sonner Toast Close Buttons      */
+/* ============================================ */
+
+.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"] .rst-close-btn {
+  background: inherit;
+  border-color: inherit;
+  color: inherit;
+}
+
+/* ============================================= */
+/*      Restyle Sonner Toast Cancel Buttons      */
+/* ============================================= */
+
+.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"]
+  .rst-cancel-btn {
+  background: inherit;
+  color: inherit;
+  border: 1px solid var(--rst-toast-text);
+}
+
+/* ============================================= */
+/*      Restyle Sonner Toast Action Buttons      */
+/* ============================================= */
+
+.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"]
+  .rst-action-btn {
+  background: var(--rst-toast-text);
+  color: var(--rst-toast-bg);
+  border: 1px solid var(--rst-toast-text);
+}
+
+/* ====================================================== */
+/*      Align Sonner Toast Action and Cancel Buttons      */
+/* ====================================================== */
+
+.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"] .rst-cancel-btn,
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"]
+  .rst-action-btn {
+  margin-left: auto;
+}
+
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"]
+  .rst-cancel-btn
+  ~ .rst-action-btn:last-child {
+  margin-left: 0;
+}
