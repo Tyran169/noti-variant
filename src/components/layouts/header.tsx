@@ -32,7 +32,7 @@ export function Header() {
             <ThemeDropdown />
             <Button variant="outline" size="sm" asChild className="sm:px-3">
               <a
-                href="https://github.com/"
+                href="https://github.com/Tyran169/noti-variant"
                 target="_blank"
                 rel="noopener noreferrer"
               >
