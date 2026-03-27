@@ -30,8 +30,9 @@ export function ThemeDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon-sm">
+        <Button variant="outline" size="icon-sm" aria-label="Theme selection">
           <PaletteIcon className="size-4" />
+          <span className="sr-only">Theme selection</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-32">

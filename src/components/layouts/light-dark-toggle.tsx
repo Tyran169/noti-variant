@@ -13,11 +13,11 @@ export function LightDarkToggle() {
       className="rounded-full"
       size="icon-sm"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      aria-label="Toggle theme"
+      aria-label="Light/Dark toggle"
     >
       <SunIcon className="dark:-rotate-90 rotate-0 scale-100 text-[#FCAE05] transition-all dark:scale-0" />
       <MoonIcon className="absolute rotate-90 scale-0 text-[#4797D3] transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">Light/Dark toggle</span>
     </Button>
   );
 }
