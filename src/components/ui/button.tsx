@@ -10,11 +10,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/80",
-        info: "bg-info text-info-foreground hover:bg-info/80 aria-expanded:bg-info aria-expanded:text-info-foreground",
+        info: "bg-info-context text-info-context-text hover:bg-info-context/80 aria-expanded:bg-info-context aria-expanded:text-info-context-text",
         success:
-          "bg-success text-success-foreground hover:bg-success/80 aria-expanded:bg-success aria-expanded:text-success-foreground",
+          "bg-success-context text-success-context-text hover:bg-success-context/80 aria-expanded:bg-success-context aria-expanded:text-success-context-text",
         warning:
-          "bg-warning text-warning-foreground hover:bg-warning/80 aria-expanded:bg-warning aria-expanded:text-warning-foreground",
+          "bg-warning-context text-warning-context-text hover:bg-warning-context/80 aria-expanded:bg-warning-context aria-expanded:text-warning-context-text",
         outline:
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         secondary:

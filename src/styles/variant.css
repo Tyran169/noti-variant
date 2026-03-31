@@ -1,77 +1,118 @@
 @theme inline {
+  /* Info */
   --color-info-border: var(--info-border);
-  --color-info-foreground: var(--info-foreground);
-  --color-info: var(--info);
-  --color-info-popover: var(--info-popover);
-  --color-info-popover-foreground: var(--info-popover-foreground);
-  --color-info-card: var(--info-card);
-  --color-info-card-foreground: var(--info-card-foreground);
+  --color-info-context: var(--info-context);
+  --color-info-context-text: var(--info-context-text);
+  --color-info-surface: var(--info-surface);
+  --color-info-surface-text: var(--info-surface-text);
+  --color-info-surface-text-hover: var(--info-surface-text-hover);
+  --color-info-surface-text-mute: color-mix(
+    in oklab,
+    var(--info-surface-text) 77.5%,
+    transparent
+  );
 
+  /* Success */
   --color-success-border: var(--success-border);
-  --color-success-foreground: var(--success-foreground);
-  --color-success: var(--success);
-  --color-success-popover: var(--success-popover);
-  --color-success-popover-foreground: var(--success-popover-foreground);
-  --color-success-card: var(--success-card);
-  --color-success-card-foreground: var(--success-card-foreground);
+  --color-success-context: var(--success-context);
+  --color-success-context-text: var(--success-context-text);
+  --color-success-surface: var(--success-surface);
+  --color-success-surface-text: var(--success-surface-text);
+  --color-success-surface-text-hover: var(--success-surface-text-hover);
+  --color-success-surface-text-mute: color-mix(
+    in oklab,
+    var(--success-surface-text) 77.5%,
+    transparent
+  );
 
+  /* Warning */
   --color-warning-border: var(--warning-border);
-  --color-warning-foreground: var(--warning-foreground);
-  --color-warning: var(--warning);
-  --color-warning-popover: var(--warning-popover);
-  --color-warning-popover-foreground: var(--warning-popover-foreground);
-  --color-warning-card: var(--warning-card);
-  --color-warning-card-foreground: var(--warning-card-foreground);
+  --color-warning-context: var(--warning-context);
+  --color-warning-context-text: var(--warning-context-text);
+  --color-warning-surface: var(--warning-surface);
+  --color-warning-surface-text: var(--warning-surface-text);
+  --color-warning-surface-text-hover: var(--warning-surface-text-hover);
+  --color-warning-surface-text-mute: color-mix(
+    in oklab,
+    var(--warning-surface-text) 77.5%,
+    transparent
+  );
 }
 
 :root {
-  --info: var(--color-blue-600);
-  --info-foreground: oklch(0.985 0 0);
-  --info-card: var(--color-blue-100);
-  --info-card-foreground: var(--color-blue-900);
-  --info-popover: var(--color-blue-100);
-  --info-popover-foreground: var(--color-blue-900);
+  /* Info */
+  --info-context: var(--color-blue-700);
+  --info-context-text: oklch(0.985 0 0);
+  --info-surface: var(--color-blue-50);
+  --info-surface-text: var(--color-blue-900);
+  --info-surface-text-hover: var(--color-blue-950);
   --info-border: var(--color-blue-200);
 
-  --success: var(--color-emerald-600);
-  --success-foreground: oklch(0.985 0 0);
-  --success-card: var(--color-emerald-100);
-  --success-card-foreground: var(--color-emerald-900);
-  --success-popover: var(--color-emerald-100);
-  --success-popover-foreground: var(--color-emerald-900);
+  /* Success */
+  --success-context: var(--color-emerald-700);
+  --success-context-text: oklch(0.985 0 0);
+  --success-surface: var(--color-emerald-50);
+  --success-surface-text: var(--color-emerald-900);
+  --success-surface-text-hover: var(--color-emerald-950);
   --success-border: var(--color-emerald-200);
 
-  --warning: var(--color-amber-600);
-  --warning-foreground: oklch(0.985 0 0);
-  --warning-card: var(--color-amber-100);
-  --warning-card-foreground: var(--color-amber-900);
-  --warning-popover: var(--color-amber-100);
-  --warning-popover-foreground: var(--color-amber-900);
+  /* Warning */
+  --warning-context: var(--color-amber-700);
+  --warning-context-text: oklch(0.985 0 0);
+  --warning-surface: var(--color-amber-50);
+  --warning-surface-text: var(--color-amber-900);
+  --warning-surface-text-hover: var(--color-amber-950);
   --warning-border: var(--color-amber-200);
 }
 
 .dark {
-  --info: var(--color-blue-700);
-  --info-foreground: oklch(0.985 0 0);
-  --info-card: var(--color-blue-950);
-  --info-card-foreground: var(--color-blue-100);
-  --info-popover: var(--color-blue-950);
-  --info-popover-foreground: var(--color-blue-100);
+  /* Info */
+  --info-context: var(--color-blue-700);
+  --info-context-text: oklch(0.985 0 0);
+  --info-surface: var(--color-blue-950);
+  --info-surface-text: var(--color-blue-100);
+  --info-surface-text-hover: var(--color-blue-50);
   --info-border: var(--color-blue-900);
 
-  --success: var(--color-emerald-700);
-  --success-foreground: oklch(0.985 0 0);
-  --success-card: var(--color-emerald-950);
-  --success-card-foreground: var(--color-emerald-100);
-  --success-popover: var(--color-emerald-950);
-  --success-popover-foreground: var(--color-emerald-100);
+  /* Success */
+  --success-context: var(--color-emerald-700);
+  --success-context-text: oklch(0.985 0 0);
+  --success-surface: var(--color-emerald-950);
+  --success-surface-text: var(--color-emerald-100);
+  --success-surface-text-hover: var(--color-emerald-50);
   --success-border: var(--color-emerald-900);
 
-  --warning: var(--color-yellow-700);
-  --warning-foreground: oklch(0.985 0 0);
-  --warning-card: var(--color-yellow-950);
-  --warning-card-foreground: var(--color-yellow-100);
-  --warning-popover: var(--color-yellow-950);
-  --warning-popover-foreground: var(--color-yellow-100);
-  --warning-border: var(--color-yellow-900);
+  /* Warning */
+  --warning-context: var(--color-yellow-700);
+  --warning-context-text: oklch(0.985 0 0);
+  --warning-surface: color-mix(in oklab, var(--color-yellow-500) 40%, black);
+  --warning-surface-text: var(--color-yellow-100);
+  --warning-surface-text-hover: var(--color-yellow-50);
+  --warning-border: color-mix(in oklab, var(--color-yellow-500) 56%, black);
+}
+
+/* Add destructive variant styles */
+
+@theme inline {
+  --color-destructive-border: var(--destructive-border);
+  --color-destructive-surface: var(--destructive-surface);
+  --color-destructive-surface-text: var(--destructive-surface-text);
+  --color-destructive-surface-text-mute: var(--destructive-surface-text-mute);
+  --color-destructive-surface-text-hover: var(--destructive-surface-text-hover);
+}
+
+:root {
+  --destructive-surface: color-mix(in oklab, var(--destructive) 10%, white);
+  --destructive-surface-text: color-mix(in oklab, var(--destructive) 70%, black);
+  --destructive-surface-text-mute: color-mix(in oklab, var(--destructive) 87.5%, black);
+  --destructive-surface-text-hover: color-mix(in oklab, var(--destructive) 50%, black);
+  --destructive-border: color-mix(in oklab, var(--destructive) 35%, white);
+}
+
+.dark {
+  --destructive-surface: color-mix(in oklab, var(--destructive) 50%, black);
+  --destructive-surface-text: color-mix(in oklab, var(--destructive) 25%, white);
+  --destructive-surface-text-mute: color-mix(in oklab, var(--destructive) 37.5%, white);
+  --destructive-surface-text-hover: color-mix(in oklab, var(--destructive) 10%, white);
+  --destructive-border: color-mix(in oklab, var(--destructive) 70%, black);
 }

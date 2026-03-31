@@ -1,6 +1,6 @@
 /*
- * A small set of CSS overrides to refine Sonner's default toast styles.
- * Designed to work with Sonner's default markup and class names.
+ * A small set of CSS overrides to refine Shadcn Sonner's default toast styles.
+ * Designed to work with Shadcn Sonner's default markup and class names.
  *
  * Features:
  * - Theme-aware (light / dark)
@@ -8,7 +8,7 @@
  * - Improved button styling
  * - Minimal overrides
  *
- * Note: This file assumes that Sonner's default styles are included in the project.
+ * Note: This file assumes that Shadcn Sonner's default styles are included in the project.
  * Note: The 'invert' options will be disabled because these css variables follow the root theme variables therefore they cannot be inverted.
  */
 
@@ -21,24 +21,36 @@
   --rst-normal-border: var(--color-border);
   --rst-normal-text: var(--color-popover-foreground);
 
-  --rst-success-bg: var(--color-success-popover);
-  --rst-success-border: var(--color-success-border);
-  --rst-success-text: var(--color-success-popover-foreground);
+  --rst-success-bg: var(--color-emerald-50);
+  --rst-success-border: var(--color-emerald-200);
+  --rst-success-text: var(--color-emerald-900);
 
-  --rst-info-bg: var(--color-info-popover);
-  --rst-info-border: var(--color-info-border);
-  --rst-info-text: var(--color-info-popover-foreground);
+  --rst-info-bg: var(--color-blue-50);
+  --rst-info-border: var(--color-blue-200);
+  --rst-info-text: var(--color-blue-900);
 
-  --rst-warning-bg: var(--color-warning-popover);
-  --rst-warning-border: var(--color-warning-border);
-  --rst-warning-text: var(--color-warning-popover-foreground);
+  --rst-warning-bg: var(--color-amber-50);
+  --rst-warning-border: var(--color-amber-200);
+  --rst-warning-text: var(--color-amber-900);
 
-  --rst-error-bg: color-mix(in oklab, var(--destructive) 20%, white);
+  --rst-error-bg: color-mix(in oklab, var(--destructive) 10%, white);
   --rst-error-border: color-mix(in oklab, var(--destructive) 35%, white);
   --rst-error-text: color-mix(in oklab, var(--destructive) 70%, black);
 }
 
 .rst-toaster[data-sonner-theme="dark"] {
+  --rst-success-bg: var(--color-emerald-950);
+  --rst-success-border: var(--color-emerald-900);
+  --rst-success-text: var(--color-emerald-100);
+
+  --rst-info-bg: var(--color-blue-950);
+  --rst-info-border: var(--color-blue-900);
+  --rst-info-text: var(--color-blue-100);
+
+  --rst-warning-bg: color-mix(in oklab, var(--color-yellow-500) 40%, black);
+  --rst-warning-border: color-mix(in oklab, var(--color-yellow-500) 56%, black);
+  --rst-warning-text: var(--color-yellow-100);
+
   --rst-error-bg: color-mix(in oklab, var(--destructive) 50%, black);
   --rst-error-border: color-mix(in oklab, var(--destructive) 70%, black);
   --rst-error-text: color-mix(in oklab, var(--destructive) 25%, white);

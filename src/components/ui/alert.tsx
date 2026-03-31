@@ -9,13 +9,15 @@ const alertVariants = cva(
     variants: {
       variant: {
         default: "bg-card text-card-foreground",
-        info: "border-info-border bg-info-card text-info-card-foreground *:data-[slot=alert-description]:text-info-card-foreground/77.5",
+        info: "alert-info border-info-border bg-info-surface text-info-surface-text *:data-[slot=alert-description]:text-info-surface-text-mute",
         success:
-          "border-success-border bg-success-card text-success-card-foreground *:data-[slot=alert-description]:text-success-card-foreground/77.5",
+          "alert-success border-success-border bg-success-surface text-success-surface-text *:data-[slot=alert-description]:text-success-surface-text-mute",
         warning:
-          "border-warning-border bg-warning-card text-warning-card-foreground *:data-[slot=alert-description]:text-warning-card-foreground/77.5",
+          "alert-warning border-warning-border bg-warning-surface text-warning-surface-text *:data-[slot=alert-description]:text-warning-surface-text-mute",
         destructive:
-          "bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current"
+          "alert-destructive border-destructive-border bg-destructive-surface text-destructive-surface-text *:data-[slot=alert-description]:text-destructive-surface-text-mute",
+        "destructive-text":
+          "alert-destructive-text bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current"
       }
     },
     defaultVariants: {
@@ -44,7 +46,7 @@ function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="alert-title"
       className={cn(
-        "font-heading font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground",
+        "font-heading font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [.alert-destructive-text_&_a]:hover:text-destructive [.alert-destructive_&_a]:hover:text-destructive-surface-text-hover [.alert-info_&_a]:hover:text-info-surface-text-hover [.alert-success_&_a]:hover:text-success-surface-text-hover [.alert-warning_&_a]:hover:text-warning-surface-text-hover",
         className
       )}
       {...props}
@@ -60,7 +62,7 @@ function AlertDescription({
     <div
       data-slot="alert-description"
       className={cn(
-        "text-balance text-muted-foreground text-sm md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
+        "text-balance text-muted-foreground text-sm md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4 [.alert-destructive-text_&_a]:hover:text-destructive [.alert-destructive_&_a]:hover:text-destructive-surface-text-hover [.alert-info_&_a]:hover:text-info-surface-text-hover [.alert-success_&_a]:hover:text-success-surface-text-hover [.alert-warning_&_a]:hover:text-warning-surface-text-hover",
         className
       )}
       {...props}
