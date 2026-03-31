@@ -11,7 +11,6 @@ import {
 import { useTheme } from "next-themes";
 import { useEffect } from "react";
 import { Toaster as Sonner, type ToasterProps, useSonner } from "sonner";
-import "@/styles/sonner.css";
 
 const toastOptions: NonNullable<ToasterProps["toastOptions"]> = {
   classNames: {

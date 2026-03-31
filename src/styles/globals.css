@@ -7,6 +7,8 @@
 @import "./amethyst-haze.css";
 @import "./shadcn-rose.css";
 
+@import "./sonner.css";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
