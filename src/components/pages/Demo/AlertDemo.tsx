@@ -69,8 +69,9 @@ export default function AlertDemo() {
           <Link href="/#alert">Account</Link> suspended
         </AlertTitle>
         <AlertDescription>
-          Your account has been suspended due to <Link href="/#alert">suspicious activity</Link>. Please
-          contact support for more information.
+          Your account has been suspended due to{" "}
+          <Link href="/#alert">suspicious activity</Link>. Please contact
+          support for more information.
         </AlertDescription>
       </Alert>
     </div>

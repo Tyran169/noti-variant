@@ -104,15 +104,31 @@
 :root {
   --destructive-surface: color-mix(in oklab, var(--destructive) 10%, white);
   --destructive-surface-text: color-mix(in oklab, var(--destructive) 70%, black);
-  --destructive-surface-text-mute: color-mix(in oklab, var(--destructive) 87.5%, black);
-  --destructive-surface-text-hover: color-mix(in oklab, var(--destructive) 50%, black);
+  --destructive-surface-text-mute: color-mix(
+    in oklab,
+    var(--destructive) 87.5%,
+    black
+  );
+  --destructive-surface-text-hover: color-mix(
+    in oklab,
+    var(--destructive) 50%,
+    black
+  );
   --destructive-border: color-mix(in oklab, var(--destructive) 35%, white);
 }
 
 .dark {
   --destructive-surface: color-mix(in oklab, var(--destructive) 50%, black);
   --destructive-surface-text: color-mix(in oklab, var(--destructive) 25%, white);
-  --destructive-surface-text-mute: color-mix(in oklab, var(--destructive) 37.5%, white);
-  --destructive-surface-text-hover: color-mix(in oklab, var(--destructive) 10%, white);
+  --destructive-surface-text-mute: color-mix(
+    in oklab,
+    var(--destructive) 37.5%,
+    white
+  );
+  --destructive-surface-text-hover: color-mix(
+    in oklab,
+    var(--destructive) 10%,
+    white
+  );
   --destructive-border: color-mix(in oklab, var(--destructive) 70%, black);
 }
