@@ -21,39 +21,21 @@
   --rst-normal-border: var(--color-border);
   --rst-normal-text: var(--color-popover-foreground);
 
-  --rst-success-bg: var(--color-emerald-50);
-  --rst-success-border: var(--color-emerald-200);
-  --rst-success-text: var(--color-emerald-900);
+  --rst-success-bg: var(--color-success-soft);
+  --rst-success-border: var(--color-success-border);
+  --rst-success-text: var(--color-success-soft-fg);
 
-  --rst-info-bg: var(--color-blue-50);
-  --rst-info-border: var(--color-blue-200);
-  --rst-info-text: var(--color-blue-900);
+  --rst-info-bg: var(--color-info-soft);
+  --rst-info-border: var(--color-info-border);
+  --rst-info-text: var(--color-info-soft-fg);
 
-  --rst-warning-bg: var(--color-amber-50);
-  --rst-warning-border: var(--color-amber-200);
-  --rst-warning-text: var(--color-amber-900);
+  --rst-warning-bg: var(--color-warning-soft);
+  --rst-warning-border: var(--color-warning-border);
+  --rst-warning-text: var(--color-warning-soft-fg);
 
-  --rst-error-bg: color-mix(in oklab, var(--destructive) 10%, white);
-  --rst-error-border: color-mix(in oklab, var(--destructive) 35%, white);
-  --rst-error-text: color-mix(in oklab, var(--destructive) 70%, black);
-}
-
-.rst-toaster[data-sonner-theme="dark"] {
-  --rst-success-bg: var(--color-emerald-950);
-  --rst-success-border: var(--color-emerald-900);
-  --rst-success-text: var(--color-emerald-100);
-
-  --rst-info-bg: var(--color-blue-950);
-  --rst-info-border: var(--color-blue-900);
-  --rst-info-text: var(--color-blue-100);
-
-  --rst-warning-bg: color-mix(in oklab, var(--color-yellow-500) 40%, black);
-  --rst-warning-border: color-mix(in oklab, var(--color-yellow-500) 56%, black);
-  --rst-warning-text: var(--color-yellow-100);
-
-  --rst-error-bg: color-mix(in oklab, var(--destructive) 50%, black);
-  --rst-error-border: color-mix(in oklab, var(--destructive) 70%, black);
-  --rst-error-text: color-mix(in oklab, var(--destructive) 25%, white);
+  --rst-error-bg: var(--color-destructive-soft);
+  --rst-error-border: var(--color-destructive-border);
+  --rst-error-text: var(--color-destructive-soft-fg);
 }
 
 .rst-toaster .rst-toast {

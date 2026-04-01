@@ -9,13 +9,13 @@ const alertVariants = cva(
     variants: {
       variant: {
         default: "bg-card text-card-foreground",
-        info: "alert-info border-info-border bg-info-surface text-info-surface-text *:data-[slot=alert-description]:text-info-surface-text-mute",
+        info: "alert-info border-info-border bg-info-soft text-info-soft-fg *:data-[slot=alert-description]:text-info-soft-fg-muted",
         success:
-          "alert-success border-success-border bg-success-surface text-success-surface-text *:data-[slot=alert-description]:text-success-surface-text-mute",
+          "alert-success border-success-border bg-success-soft text-success-soft-fg *:data-[slot=alert-description]:text-success-soft-fg-muted",
         warning:
-          "alert-warning border-warning-border bg-warning-surface text-warning-surface-text *:data-[slot=alert-description]:text-warning-surface-text-mute",
+          "alert-warning border-warning-border bg-warning-soft text-warning-soft-fg *:data-[slot=alert-description]:text-warning-soft-fg-muted",
         destructive:
-          "alert-destructive border-destructive-border bg-destructive-surface text-destructive-surface-text *:data-[slot=alert-description]:text-destructive-surface-text-mute",
+          "alert-destructive border-destructive-border bg-destructive-soft text-destructive-soft-fg *:data-[slot=alert-description]:text-destructive-soft-fg-muted",
         "destructive-text":
           "alert-destructive-text bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current"
       }
@@ -46,7 +46,7 @@ function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="alert-title"
       className={cn(
-        "font-heading font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [.alert-destructive-text_&_a]:hover:text-destructive [.alert-destructive_&_a]:hover:text-destructive-surface-text-hover [.alert-info_&_a]:hover:text-info-surface-text-hover [.alert-success_&_a]:hover:text-success-surface-text-hover [.alert-warning_&_a]:hover:text-warning-surface-text-hover",
+        "font-heading font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [.alert-destructive-text_&_a]:hover:text-destructive [.alert-destructive_&_a]:hover:text-destructive-soft-fg-hover [.alert-info_&_a]:hover:text-info-soft-fg-hover [.alert-success_&_a]:hover:text-success-soft-fg-hover [.alert-warning_&_a]:hover:text-warning-soft-fg-hover",
         className
       )}
       {...props}
@@ -62,7 +62,7 @@ function AlertDescription({
     <div
       data-slot="alert-description"
       className={cn(
-        "text-balance text-muted-foreground text-sm md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4 [.alert-destructive-text_&_a]:hover:text-destructive [.alert-destructive_&_a]:hover:text-destructive-surface-text-hover [.alert-info_&_a]:hover:text-info-surface-text-hover [.alert-success_&_a]:hover:text-success-surface-text-hover [.alert-warning_&_a]:hover:text-warning-surface-text-hover",
+        "text-balance text-muted-foreground text-sm md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4 [.alert-destructive-text_&_a]:hover:text-destructive [.alert-destructive_&_a]:hover:text-destructive-soft-fg-hover [.alert-info_&_a]:hover:text-info-soft-fg-hover [.alert-success_&_a]:hover:text-success-soft-fg-hover [.alert-warning_&_a]:hover:text-warning-soft-fg-hover",
         className
       )}
       {...props}
