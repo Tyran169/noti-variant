@@ -9,13 +9,13 @@ const alertVariants = cva(
     variants: {
       variant: {
         default: "bg-card text-card-foreground",
-        info: "alert-info border-info-border bg-info-soft text-info-soft-fg *:data-[slot=alert-description]:text-info-soft-fg-muted",
+        info: "alert-info border-info-soft-border bg-info-soft text-info-soft-fg *:data-[slot=alert-description]:text-info-soft-fg-muted",
         success:
-          "alert-success border-success-border bg-success-soft text-success-soft-fg *:data-[slot=alert-description]:text-success-soft-fg-muted",
+          "alert-success border-success-soft-border bg-success-soft text-success-soft-fg *:data-[slot=alert-description]:text-success-soft-fg-muted",
         warning:
-          "alert-warning border-warning-border bg-warning-soft text-warning-soft-fg *:data-[slot=alert-description]:text-warning-soft-fg-muted",
+          "alert-warning border-warning-soft-border bg-warning-soft text-warning-soft-fg *:data-[slot=alert-description]:text-warning-soft-fg-muted",
         destructive:
-          "alert-destructive border-destructive-border bg-destructive-soft text-destructive-soft-fg *:data-[slot=alert-description]:text-destructive-soft-fg-muted",
+          "alert-destructive border-destructive-soft-border bg-destructive-soft text-destructive-soft-fg *:data-[slot=alert-description]:text-destructive-soft-fg-muted",
         "destructive-text":
           "alert-destructive-text bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current"
       }

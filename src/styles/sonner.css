@@ -22,19 +22,19 @@
   --rst-normal-text: var(--color-popover-foreground);
 
   --rst-success-bg: var(--color-success-soft);
-  --rst-success-border: var(--color-success-border);
+  --rst-success-border: var(--color-success-soft-border);
   --rst-success-text: var(--color-success-soft-fg);
 
   --rst-info-bg: var(--color-info-soft);
-  --rst-info-border: var(--color-info-border);
+  --rst-info-border: var(--color-info-soft-border);
   --rst-info-text: var(--color-info-soft-fg);
 
   --rst-warning-bg: var(--color-warning-soft);
-  --rst-warning-border: var(--color-warning-border);
+  --rst-warning-border: var(--color-warning-soft-border);
   --rst-warning-text: var(--color-warning-soft-fg);
 
   --rst-error-bg: var(--color-destructive-soft);
-  --rst-error-border: var(--color-destructive-border);
+  --rst-error-border: var(--color-destructive-soft-border);
   --rst-error-text: var(--color-destructive-soft-fg);
 }
 

@@ -1,42 +1,30 @@
 @theme inline {
   /* Info */
-  --color-info-border: var(--info-border);
   --color-info-solid: var(--info-solid);
   --color-info-solid-fg: var(--info-solid-fg);
   --color-info-soft: var(--info-soft);
   --color-info-soft-fg: var(--info-soft-fg);
   --color-info-soft-fg-hover: var(--info-soft-fg-hover);
-  --color-info-soft-fg-muted: color-mix(
-    in oklab,
-    var(--info-soft-fg) 77.5%,
-    transparent
-  );
+  --color-info-soft-fg-muted: var(--info-soft-fg-muted);
+  --color-info-soft-border: var(--info-soft-border);
 
   /* Success */
-  --color-success-border: var(--success-border);
   --color-success-solid: var(--success-solid);
   --color-success-solid-fg: var(--success-solid-fg);
   --color-success-soft: var(--success-soft);
   --color-success-soft-fg: var(--success-soft-fg);
   --color-success-soft-fg-hover: var(--success-soft-fg-hover);
-  --color-success-soft-fg-muted: color-mix(
-    in oklab,
-    var(--success-soft-fg) 77.5%,
-    transparent
-  );
+  --color-success-soft-fg-muted: var(--success-soft-fg-muted);
+  --color-success-soft-border: var(--success-soft-border);
 
   /* Warning */
-  --color-warning-border: var(--warning-border);
   --color-warning-solid: var(--warning-solid);
   --color-warning-solid-fg: var(--warning-solid-fg);
   --color-warning-soft: var(--warning-soft);
   --color-warning-soft-fg: var(--warning-soft-fg);
   --color-warning-soft-fg-hover: var(--warning-soft-fg-hover);
-  --color-warning-soft-fg-muted: color-mix(
-    in oklab,
-    var(--warning-soft-fg) 77.5%,
-    transparent
-  );
+  --color-warning-soft-fg-muted: var(--warning-soft-fg-muted);
+  --color-warning-soft-border: var(--warning-soft-border);
 }
 
 :root {
@@ -46,7 +34,12 @@
   --info-soft: var(--color-blue-50);
   --info-soft-fg: var(--color-blue-900);
   --info-soft-fg-hover: var(--color-blue-950);
-  --info-border: var(--color-blue-200);
+  --info-soft-fg-muted: color-mix(
+    in oklab,
+    var(--color-blue-900) 75%,
+    var(--color-blue-50)
+  );
+  --info-soft-border: var(--color-blue-200);
 
   /* Success */
   --success-solid: var(--color-emerald-700);
@@ -54,7 +47,12 @@
   --success-soft: var(--color-emerald-50);
   --success-soft-fg: var(--color-emerald-900);
   --success-soft-fg-hover: var(--color-emerald-950);
-  --success-border: var(--color-emerald-200);
+  --success-soft-fg-muted: color-mix(
+    in oklab,
+    var(--color-emerald-900) 75%,
+    var(--color-emerald-50)
+  );
+  --success-soft-border: var(--color-emerald-200);
 
   /* Warning */
   --warning-solid: var(--color-yellow-700);
@@ -62,7 +60,12 @@
   --warning-soft: var(--color-amber-50);
   --warning-soft-fg: var(--color-amber-900);
   --warning-soft-fg-hover: var(--color-amber-950);
-  --warning-border: var(--color-amber-200);
+  --warning-soft-fg-muted: color-mix(
+    in oklab,
+    var(--color-amber-900) 75%,
+    var(--color-amber-50)
+  );
+  --warning-soft-border: var(--color-amber-200);
 }
 
 .dark {
@@ -72,7 +75,12 @@
   --info-soft: var(--color-blue-950);
   --info-soft-fg: var(--color-blue-100);
   --info-soft-fg-hover: var(--color-blue-50);
-  --info-border: var(--color-blue-900);
+  --info-soft-fg-muted: color-mix(
+    in oklab,
+    var(--color-blue-100) 75%,
+    var(--color-blue-950)
+  );
+  --info-soft-border: var(--color-blue-900);
 
   /* Success */
   --success-solid: var(--color-emerald-700);
@@ -80,7 +88,12 @@
   --success-soft: var(--color-emerald-950);
   --success-soft-fg: var(--color-emerald-100);
   --success-soft-fg-hover: var(--color-emerald-50);
-  --success-border: var(--color-emerald-900);
+  --success-soft-fg-muted: color-mix(
+    in oklab,
+    var(--color-emerald-100) 75%,
+    var(--color-emerald-950)
+  );
+  --success-soft-border: var(--color-emerald-900);
 
   /* Warning */
   --warning-solid: var(--color-yellow-700);
@@ -88,17 +101,22 @@
   --warning-soft: color-mix(in oklab, var(--color-yellow-500) 40%, black);
   --warning-soft-fg: var(--color-yellow-100);
   --warning-soft-fg-hover: var(--color-yellow-50);
-  --warning-border: color-mix(in oklab, var(--color-yellow-500) 56%, black);
+  --warning-soft-fg-muted: color-mix(
+    in oklab,
+    var(--color-yellow-100) 75%,
+    var(--color-yellow-950)
+  );
+  --warning-soft-border: color-mix(in oklab, var(--color-yellow-500) 56%, black);
 }
 
 /* Add destructive variant styles */
 
 @theme inline {
-  --color-destructive-border: var(--destructive-border);
   --color-destructive-soft: var(--destructive-soft);
   --color-destructive-soft-fg: var(--destructive-soft-fg);
   --color-destructive-soft-fg-muted: var(--destructive-soft-fg-muted);
   --color-destructive-soft-fg-hover: var(--destructive-soft-fg-hover);
+  --color-destructive-soft-border: var(--destructive-soft-border);
 }
 
 :root {
@@ -114,7 +132,7 @@
     var(--destructive) 50%,
     black
   );
-  --destructive-border: color-mix(in oklab, var(--destructive) 35%, white);
+  --destructive-soft-border: color-mix(in oklab, var(--destructive) 40%, white);
 }
 
 .dark {
@@ -123,12 +141,12 @@
   --destructive-soft-fg-muted: color-mix(
     in oklab,
     var(--destructive) 37.5%,
-    white
+    #f1e4e4
   );
   --destructive-soft-fg-hover: color-mix(
     in oklab,
-    var(--destructive) 10%,
+    var(--destructive) 18%,
     white
   );
-  --destructive-border: color-mix(in oklab, var(--destructive) 70%, black);
+  --destructive-soft-border: color-mix(in oklab, var(--destructive) 70%, black);
 }

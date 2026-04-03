@@ -10,11 +10,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/80",
-        info: "bg-info-solid text-info-solid-fg hover:bg-info-solid/80 aria-expanded:bg-info-solid aria-expanded:text-info-solid-fg",
+        info: "bg-info-solid text-info-solid-fg hover:bg-info-solid/80 focus-visible:border-info-solid/40 focus-visible:ring-info-solid/40 aria-expanded:bg-info-solid aria-expanded:text-info-solid-fg",
         success:
-          "bg-success-solid text-success-solid-fg hover:bg-success-solid/80 aria-expanded:bg-success-solid aria-expanded:text-success-solid-fg",
+          "bg-success-solid text-success-solid-fg hover:bg-success-solid/80 focus-visible:border-success-solid/40 focus-visible:ring-success-solid/40 aria-expanded:bg-success-solid aria-expanded:text-success-solid-fg",
         warning:
-          "bg-warning-solid text-warning-solid-fg hover:bg-warning-solid/80 aria-expanded:bg-warning-solid aria-expanded:text-warning-solid-fg",
+          "bg-warning-solid text-warning-solid-fg hover:bg-warning-solid/80 focus-visible:border-warning-solid/40 focus-visible:ring-warning-solid/40 aria-expanded:bg-warning-solid aria-expanded:text-warning-solid-fg",
         outline:
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         secondary:
