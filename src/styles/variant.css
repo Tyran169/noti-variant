@@ -124,8 +124,8 @@
   --destructive-soft-fg: color-mix(in oklab, var(--destructive) 70%, black);
   --destructive-soft-fg-muted: color-mix(
     in oklab,
-    var(--destructive) 87.5%,
-    black
+    var(--destructive) 60%,
+    #6d6565
   );
   --destructive-soft-fg-hover: color-mix(
     in oklab,
