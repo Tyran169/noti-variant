@@ -6,7 +6,7 @@ const LAST_UPDATE = new Date();
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${SITE_URL}/`,
+      url: `${SITE_URL}`,
       lastModified: LAST_UPDATE,
       changeFrequency: "monthly",
       priority: 1.0
