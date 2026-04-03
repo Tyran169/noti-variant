@@ -138,7 +138,8 @@
 /*      Restyle Sonner Toast Cancel Buttons      */
 /* ============================================= */
 
-.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"]
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"]
   .rst-cancel-btn {
   background: inherit;
   color: inherit;
@@ -149,7 +150,8 @@
 /*      Restyle Sonner Toast Action Buttons      */
 /* ============================================= */
 
-.rst-toaster .rst-toast.rst-toast.rst-toast[data-styled="true"]
+.rst-toaster
+  .rst-toast.rst-toast.rst-toast[data-styled="true"]
   .rst-action-btn {
   background: var(--rst-toast-text);
   color: var(--rst-toast-bg);
