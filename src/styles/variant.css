@@ -106,11 +106,7 @@
     var(--color-yellow-100) 75%,
     var(--color-yellow-950)
   );
-  --warning-soft-border: color-mix(
-    in oklab,
-    var(--color-yellow-500) 56%,
-    black
-  );
+  --warning-soft-border: color-mix(in oklab, var(--color-yellow-500) 56%, black);
 }
 
 /* Add destructive variant styles */
