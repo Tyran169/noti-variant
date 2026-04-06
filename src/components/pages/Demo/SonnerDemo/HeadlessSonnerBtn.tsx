@@ -12,7 +12,7 @@ function customToast(toastOptions: Omit<ToastProps, "id">) {
       description={toastOptions.description}
       button={{
         label: toastOptions.button.label,
-        onClick: () => console.log("Button clicked")
+        onClick: toastOptions.button.onClick
       }}
     />
   ));
@@ -58,7 +58,7 @@ export default function HeadlessSonnerBtn() {
             "You have full control of styles and jsx, while still having the animations.",
           button: {
             label: "Reply",
-            onClick: () => toast.dismiss()
+            onClick: () => console.log("Custom toast button clicked!")
           }
         });
       }}
