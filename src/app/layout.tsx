@@ -33,6 +33,15 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`h-full font-sans antialiased ${geist.variable} ${fontSerif.variable} ${fontMono.variable}`}
     >
+      {process.env.NODE_ENV === "development" && (
+        <head>
+          <script
+            async
+            crossOrigin="anonymous"
+            src="https://tweakcn.com/live-preview.min.js"
+          />
+        </head>
+      )}
       <body className="min-h-full" style={{ marginRight: "unset !important" }}>
         <ThemeProvider
           attribute="class"
