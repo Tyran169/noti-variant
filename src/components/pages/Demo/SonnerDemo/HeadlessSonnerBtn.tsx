@@ -1,17 +1,17 @@
 "use client";
 
-import { toast as sonnerToast } from "sonner";
+import { toast } from "sonner";
 
 /** I recommend abstracting the toast function
  *  so that you can call it without having to use toast.custom everytime. */
-function toast(toast: Omit<ToastProps, "id">) {
-  return sonnerToast.custom((id) => (
+function customToast(toastOptions: Omit<ToastProps, "id">) {
+  return toast.custom((id) => (
     <Toast
       id={id}
-      title={toast.title}
-      description={toast.description}
+      title={toastOptions.title}
+      description={toastOptions.description}
       button={{
-        label: toast.button.label,
+        label: toastOptions.button.label,
         onClick: () => console.log("Button clicked")
       }}
     />
@@ -36,7 +36,7 @@ function Toast(props: ToastProps) {
           className="rounded bg-indigo-50 px-3 py-1 font-semibold text-indigo-600 text-sm hover:bg-indigo-100"
           onClick={() => {
             button.onClick();
-            sonnerToast.dismiss(id);
+            toast.dismiss(id);
           }}
         >
           {button.label}
@@ -52,13 +52,13 @@ export default function HeadlessSonnerBtn() {
       type="button"
       className="relative flex h-10 w-24 flex-shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-[#FCF8F7] px-4 font-medium text-sm shadow-sm transition-all hover:bg-[#f7f4f3] dark:bg-[#161615] dark:text-[#FCF8F7] dark:hover:bg-[#1A1A19]"
       onClick={() => {
-        toast({
+        customToast({
           title: "This is a headless toast",
           description:
             "You have full control of styles and jsx, while still having the animations.",
           button: {
             label: "Reply",
-            onClick: () => sonnerToast.dismiss()
+            onClick: () => toast.dismiss()
           }
         });
       }}
