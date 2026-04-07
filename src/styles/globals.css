@@ -80,7 +80,7 @@
 @layer utilities {
   :root {
     --scrollbarThumbBG: var(--color-primary);
-    --scrollbarTrackBG: var(--color-primary-foreground);
+    --scrollbarTrackBG: var(--color-secondary);
   }
   html {
     scrollbar-width: thin;
