@@ -1,30 +1,23 @@
-import { cva, type VariantProps } from "class-variance-authority";
-import type * as React from "react";
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
-  "group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-data-[slot=alert-action]:relative has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 has-data-[slot=alert-action]:pr-18 *:[svg:not([class*='size-'])]:size-4 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current",
+  "group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         default: "bg-card text-card-foreground",
-        info: "alert-info border-info-soft-border bg-info-soft text-info-soft-fg *:data-[slot=alert-description]:text-info-soft-fg-muted",
-        success:
-          "alert-success border-success-soft-border bg-success-soft text-success-soft-fg *:data-[slot=alert-description]:text-success-soft-fg-muted",
-        warning:
-          "alert-warning border-warning-soft-border bg-warning-soft text-warning-soft-fg *:data-[slot=alert-description]:text-warning-soft-fg-muted",
         destructive:
-          "alert-destructive border-destructive-soft-border bg-destructive-soft text-destructive-soft-fg *:data-[slot=alert-description]:text-destructive-soft-fg-muted",
-        "destructive-text":
-          "alert-destructive-text bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current"
-      }
+          "bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
+      },
     },
     defaultVariants: {
-      variant: "default"
-    }
+      variant: "default",
+    },
   }
-);
+)
 
 function Alert({
   className,
@@ -38,7 +31,7 @@ function Alert({
       className={cn(alertVariants({ variant }), className)}
       {...props}
     />
-  );
+  )
 }
 
 function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
@@ -46,12 +39,12 @@ function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="alert-title"
       className={cn(
-        "font-heading font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [.alert-destructive-text_&_a]:hover:text-destructive [.alert-destructive_&_a]:hover:text-destructive-soft-fg-hover [.alert-info_&_a]:hover:text-info-soft-fg-hover [.alert-success_&_a]:hover:text-success-soft-fg-hover [.alert-warning_&_a]:hover:text-warning-soft-fg-hover",
+        "font-heading font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground",
         className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function AlertDescription({
@@ -62,12 +55,12 @@ function AlertDescription({
     <div
       data-slot="alert-description"
       className={cn(
-        "text-balance text-muted-foreground text-sm md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4 [.alert-destructive-text_&_a]:hover:text-destructive [.alert-destructive_&_a]:hover:text-destructive-soft-fg-hover [.alert-info_&_a]:hover:text-info-soft-fg-hover [.alert-success_&_a]:hover:text-success-soft-fg-hover [.alert-warning_&_a]:hover:text-warning-soft-fg-hover",
+        "text-sm text-balance text-muted-foreground md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
         className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
@@ -77,7 +70,7 @@ function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
       className={cn("absolute top-2 right-2", className)}
       {...props}
     />
-  );
+  )
 }
 
-export { Alert, AlertTitle, AlertDescription, AlertAction };
+export { Alert, AlertTitle, AlertDescription, AlertAction }
