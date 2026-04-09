@@ -79,6 +79,7 @@ export async function fetchThemes(): Promise<Theme[]> {
 }
 
 export const THEME_URLS = [
+  "https://tweakcn.com/r/themes/cmnrv3gou000104l56kbj33ss",
   "https://tweakcn.com/r/themes/amber-minimal.json",
   "https://tweakcn.com/r/themes/amethyst-haze.json",
   "https://tweakcn.com/r/themes/bold-tech.json",
@@ -121,4 +122,10 @@ export const THEME_URLS = [
   "https://tweakcn.com/r/themes/vercel.json",
   "https://tweakcn.com/r/themes/vintage-paper.json",
   "https://tweakcn.com/r/themes/violet-bloom.json",
+] as const;
+
+export const CUSTOM_THEME_URLS = [
+  "https://tweakcn.com/r/themes/default.json",
+  "https://tweakcn.com/r/themes/amethyst-haze.json",
+  "https://tweakcn.com/r/themes/shadcn-rose.json",
 ] as const

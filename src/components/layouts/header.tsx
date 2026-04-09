@@ -1,9 +1,9 @@
 import { MoveUpRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hashIdString } from "@/lib/hashIdString";
+import { ThemePicker } from "../tweakcn-theme-picker";
 import { LightDarkToggle } from "./light-dark-toggle";
 import Logo from "./logo";
-import { ThemeDropdown } from "./theme-dropdown";
 
 const HEADER_ID = hashIdString("main-header", { length: 32, seed: 12345 });
 
@@ -29,7 +29,7 @@ export function Header() {
 
           {/* Right: GitHub Button and Theme Toggle */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <ThemeDropdown />
+            <ThemePicker />
             <Button variant="outline" size="sm" asChild className="sm:px-3">
               <a
                 href="https://github.com/Tyran169/noti-variant"

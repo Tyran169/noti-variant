@@ -22,7 +22,11 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("h-full font-sans antialiased", "font-sans", geist.variable)}
+      className={cn(
+        "h-full font-sans antialiased",
+        "font-sans",
+        geist.variable
+      )}
     >
       <body className="min-h-full" style={{ marginRight: "unset !important" }}>
         <ThemeProvider
