@@ -24,6 +24,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { hashIdString } from "@/lib/hashIdString";
 import { fetchTheme, fetchThemes, type Theme } from "@/lib/tweakcn";
+import { CUSTOM_THEME_URLS } from "@/lib/tweakcn-custom-default";
 import { cn } from "@/lib/utils";
 import { useTweakCNThemes } from "@/providers/tweakcn-theme-provider";
 
@@ -43,7 +44,8 @@ function getSavedThemes(): SavedThemeEntry[] {
   if (typeof window === "undefined") return [];
   try {
     const saved = localStorage.getItem(SAVED_THEMES_KEY);
-    return saved ? JSON.parse(saved) : [];
+    if (!saved) return CUSTOM_THEME_URLS as unknown as SavedThemeEntry[]; // Return default themes if no saved themes
+    return JSON.parse(saved);
   } catch {
     return [];
   }
@@ -226,7 +228,9 @@ export function ThemePicker({
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="sm" className={cn("gap-2", className)}>
           <Palette className="h-4 w-4" />
-          {currentTheme ? formatThemeName(currentTheme.name) : "Theme"}
+          <span className="max-w-[120px] truncate">
+            {currentTheme ? formatThemeName(currentTheme.name) : "Theme"}
+          </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[280px] p-0">

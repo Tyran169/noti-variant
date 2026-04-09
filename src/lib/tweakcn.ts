@@ -1,46 +1,46 @@
 export interface Theme {
-  $schema?: string
-  name: string
-  type: string
-  css?: Record<string, Record<string, string>>
+  $schema?: string;
+  name: string;
+  type: string;
+  css?: Record<string, Record<string, string>>;
   cssVars: {
-    theme?: Record<string, string>
-    light: Record<string, string>
-    dark: Record<string, string>
-  }
+    theme?: Record<string, string>;
+    light: Record<string, string>;
+    dark: Record<string, string>;
+  };
 }
 
 interface CachedTheme {
-  theme: Theme
-  timestamp: number
+  theme: Theme;
+  timestamp: number;
 }
 
-const CACHE_EXPIRY_MS = 24 * 60 * 60 * 1000 // 24 hours
-const CACHE_PREFIX = "tweakcn-theme:"
+const CACHE_EXPIRY_MS = 24 * 60 * 60 * 1000; // 24 hours
+const CACHE_PREFIX = "tweakcn-theme:";
 
 function getCacheKey(url: string): string {
-  return `${CACHE_PREFIX}${url}`
+  return `${CACHE_PREFIX}${url}`;
 }
 
 function getCachedTheme(url: string): Theme | null {
   try {
-    const cached = localStorage.getItem(getCacheKey(url))
+    const cached = localStorage.getItem(getCacheKey(url));
     if (!cached) {
-      return null
+      return null;
     }
 
-    const parsed = JSON.parse(cached) as CachedTheme
-    const isExpired = Date.now() - parsed.timestamp > CACHE_EXPIRY_MS
+    const parsed = JSON.parse(cached) as CachedTheme;
+    const isExpired = Date.now() - parsed.timestamp > CACHE_EXPIRY_MS;
 
     if (isExpired) {
-      localStorage.removeItem(getCacheKey(url))
-      return null
+      localStorage.removeItem(getCacheKey(url));
+      return null;
     }
 
-    return parsed.theme
+    return parsed.theme;
   } catch (error) {
-    console.warn("Failed to get cached theme:", error)
-    return null
+    console.warn("Failed to get cached theme:", error);
+    return null;
   }
 }
 
@@ -48,38 +48,38 @@ function setCachedTheme(url: string, theme: Theme): void {
   try {
     const cached: CachedTheme = {
       theme,
-      timestamp: Date.now(),
-    }
-    localStorage.setItem(getCacheKey(url), JSON.stringify(cached))
+      timestamp: Date.now()
+    };
+    localStorage.setItem(getCacheKey(url), JSON.stringify(cached));
   } catch (error) {
-    console.warn("Failed to cache theme:", error)
+    console.warn("Failed to cache theme:", error);
   }
 }
 
 export async function fetchTheme(url: string): Promise<Theme> {
-  const cached = getCachedTheme(url)
+  const cached = getCachedTheme(url);
   if (cached) {
-    return cached
+    return cached;
   }
 
-  const response = await fetch(url)
+  const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`Failed to fetch theme: ${response.statusText}`)
+    throw new Error(`Failed to fetch theme: ${response.statusText}`);
   }
 
-  const theme = await response.json()
-  setCachedTheme(url, theme)
+  const theme = await response.json();
+  setCachedTheme(url, theme);
 
-  return theme
+  return theme;
 }
 
 export async function fetchThemes(): Promise<Theme[]> {
-  const promises = THEME_URLS.map((url) => fetchTheme(url))
-  return Promise.all(promises)
+  const promises = THEME_URLS.map((url) => fetchTheme(url));
+  return Promise.all(promises);
 }
 
 export const THEME_URLS = [
-  "https://tweakcn.com/r/themes/cmnrv3gou000104l56kbj33ss",
+  "https://tweakcn.com/r/themes/cmnrxdxpw000104l7di785hes",
   "https://tweakcn.com/r/themes/amber-minimal.json",
   "https://tweakcn.com/r/themes/amethyst-haze.json",
   "https://tweakcn.com/r/themes/bold-tech.json",
@@ -121,11 +121,5 @@ export const THEME_URLS = [
   "https://tweakcn.com/r/themes/twitter.json",
   "https://tweakcn.com/r/themes/vercel.json",
   "https://tweakcn.com/r/themes/vintage-paper.json",
-  "https://tweakcn.com/r/themes/violet-bloom.json",
+  "https://tweakcn.com/r/themes/violet-bloom.json"
 ] as const;
-
-export const CUSTOM_THEME_URLS = [
-  "https://tweakcn.com/r/themes/default.json",
-  "https://tweakcn.com/r/themes/amethyst-haze.json",
-  "https://tweakcn.com/r/themes/shadcn-rose.json",
-] as const
