@@ -1,8 +1,8 @@
 import { MoveUpRightIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { hashIdString } from "@/lib/hashIdString";
-import { ThemePicker } from "../tweakcn-theme-picker";
-import { LightDarkToggle } from "./light-dark-toggle";
+import { LightDarkToggle } from "../themes/light-dark-toggle";
+import { ThemePicker } from "../themes/tweakcn-theme-picker";
+import { Button } from "../ui/button";
 import Logo from "./logo";
 
 const HEADER_ID = hashIdString("main-header", { length: 32, seed: 12345 });

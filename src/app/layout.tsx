@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layouts/header";
+import { ThemeProvider } from "@/components/themes/tweakcn-theme-provider";
 import { EnsureDefaultIcon, Toaster } from "@/components/ui/sonner";
-import { ThemeProvider } from "@/providers/tweakcn-theme-provider";
 import { preLoadResources, rootMetadata } from "./metadata";
 import "@/styles/globals.css";
 import { Geist } from "next/font/google";

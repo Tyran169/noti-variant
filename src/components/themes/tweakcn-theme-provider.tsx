@@ -3,7 +3,7 @@
 import type { ThemeProviderProps } from "next-themes";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import * as React from "react";
-import type { Theme } from "@/lib/tweakcn";
+import type { Theme } from "@/lib/themes/tweakcn";
 
 export function useTweakCNThemes() {
   const [currentTheme, setCurrentTheme] = React.useState<Theme | null>(null);

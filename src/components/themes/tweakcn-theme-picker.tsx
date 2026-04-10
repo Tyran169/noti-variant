@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import * as React from "react";
+import { useTweakCNThemes } from "@/components/themes/tweakcn-theme-provider";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -23,10 +24,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { hashIdString } from "@/lib/hashIdString";
-import { fetchTheme, fetchThemes, type Theme } from "@/lib/tweakcn";
-import { CUSTOM_THEME_URLS } from "@/lib/tweakcn-custom-default";
+import { fetchTheme, fetchThemes, type Theme } from "@/lib/themes/tweakcn";
+import { CUSTOM_THEME_URLS } from "@/lib/themes/tweakcn-custom-default";
 import { cn } from "@/lib/utils";
-import { useTweakCNThemes } from "@/providers/tweakcn-theme-provider";
 
 interface SavedThemeEntry {
   url: string;
@@ -227,9 +227,18 @@ export function ThemePicker({
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="sm" className={cn("gap-2", className)}>
-          <Palette className="h-4 w-4" />
+          <Palette
+            className={cn(
+              "h-4 w-4",
+              currentTheme ? "text-foreground" : "text-muted-foreground"
+            )}
+          />
           <span className="max-w-[120px] truncate">
-            {currentTheme ? formatThemeName(currentTheme.name) : "Theme"}
+            {currentTheme ? (
+              formatThemeName(currentTheme.name)
+            ) : (
+              <span className="text-muted-foreground">Theme</span>
+            )}
           </span>
         </Button>
       </DropdownMenuTrigger>
