@@ -54,15 +54,15 @@ export function Header() {
 
 const derivedHeihtScript = `
 ;(function () {
-  const mh = document.getElementById('${HEADER_ID}');
+  let mh = document.getElementById('${HEADER_ID}');
   if (!mh) return;
-  const hs = mh.nextElementSibling;
+  let hs = mh.nextElementSibling;
   if (!(hs instanceof HTMLDivElement)) return;
-  const uh = () => {
+  let uh = () => {
     hs.style.height = mh.offsetHeight + 'px';
   };
   uh();
-  const ro = new ResizeObserver(uh);
+  let ro = new ResizeObserver(uh);
   ro.observe(mh);
 })();
 `;
