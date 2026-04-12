@@ -14,7 +14,9 @@ This project is a Next.js application showcasing various notification styles and
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Tyran169/noti-variant.git
+
+   cd noti-variant
    ```
 
 2. Install dependencies:
